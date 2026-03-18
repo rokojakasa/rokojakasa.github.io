@@ -2,51 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My GitHub Page</title>
+  <title>San Francisco Crime Analysis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      text-align: center;
-    }
-    header {
-      background: #333;
-      color: white;
-      padding: 20px;
-    }
-    main {
-      padding: 40px;
-    }
-    footer {
-      background: #333;
-      color: white;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <header>
-  <h1>Welcome to My Website</h1>
+  <h1>San Francisco Crime Analysis</h1>
+  <p>A data-driven exploration of crime patterns across districts, time, and categories</p>
 </header>
 
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#static">Static Insights</a>
+  <a href="#dynamic">Interactive Analysis</a>
+</nav>
+
 <main>
-  <h2>Hello 👋</h2>
-  <p>This is my GitHub Pages site.</p>
-  <p>Check out my <a href="https://github.com/rokojakasa">GitHub profile</a>.</p>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <h2>📊 Project Overview</h2>
+    <p>
+      This project explores crime data from San Francisco, focusing on patterns across 
+      districts, time, and crime categories. By combining static visual summaries with 
+      interactive plots, we aim to uncover meaningful trends and behavioral patterns.
+    </p>
+  </section>
+
+  <!-- STATIC VISUALS -->
+  <section id="static">
+    <h2>📌 Static Insights</h2>
+
+    <div class="card">
+      <h3>Top 10 Crime Categories</h3>
+      <p>
+        This chart highlights the most frequent crime categories, giving a quick overview 
+        of dominant crime types in the city.
+      </p>
+      <img src="images/top10_categories.png" alt="Top 10 Crime Categories">
+    </div>
+
+    <div class="card">
+      <h3>Total Crime Count by District</h3>
+      <p>
+        Crime is not evenly distributed. This visualization shows which districts experience 
+        higher overall crime activity.
+      </p>
+      <img src="images/crime_count_by_district.png" alt="Crime by District">
+    </div>
+
+    <div class="card">
+      <h3>Relative Crime Probability</h3>
+      <p>
+        This heatmap compares the probability of specific crimes within each district relative 
+        to overall crime rates, revealing district-specific crime patterns.
+      </p>
+      <img src="images/crime_by_distict_heatmap.png" alt="Probability Heatmap">
+    </div>
+  </section>
+
+  <!-- DYNAMIC VISUALS -->
+  <section id="dynamic">
+    <h2>⚡ Interactive Analysis</h2>
+
+    <div class="card">
+      <h3>Saturday Drug Activity</h3>
+      <p>
+        This heatmap reveals how drug-related incidents fluctuate throughout a Saturday.
+      </p>
+      <iframe src="visualizations/saturday_drug_activity.html"></iframe>
+    </div>
+
+    <div class="card">
+      <h3>Weekly Assault Activity</h3>
+      <p>
+        Assault patterns across midweek to weekend (Wednesday–Sunday) show how behavior 
+        changes over time.
+      </p>
+      <iframe src="visualizations/assault_weekly_heatmap.html"></iframe>
+    </div>
+
+    <div class="card">
+      <h3>Assault Likelihood by District</h3>
+      <p>
+        This map highlights which districts have higher likelihoods of assault incidents.
+      </p>
+      <iframe src="visualizations/assault_likelihood_by_district.html"></iframe>
+    </div>
+
+    <div class="card">
+      <h3>Hourly Crime Distribution</h3>
+      <p>
+        Explore how crime types vary across the day. Toggle categories to compare patterns.
+      </p>
+      <iframe src="visualizations/normalized_hourly_distribution.html"></iframe>
+    </div>
+
+  </section>
+
+  <!-- CONCLUSION -->
+  <section id="conclusion">
+    <h2>🧠 Key Takeaways</h2>
+    <p>
+      Crime patterns in San Francisco are shaped by both geography and time. Certain districts 
+      exhibit strong associations with specific crime types, while temporal trends reveal peaks 
+      during weekends and late hours. Interactive visualizations allow deeper exploration of 
+      these dynamics.
+    </p>
+  </section>
+
 </main>
 
 <footer>
-  <p>© 2026 My Website</p>
+  <p>Created for Social Data Analysis & Visualization Course</p>
 </footer>
 
 </body>
