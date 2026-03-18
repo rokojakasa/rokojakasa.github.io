@@ -2,122 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>San Francisco Crime Analysis</title>
+  <title>SF Crime Analysis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
+<!-- ── HEADER ───────────────────────────────────────── -->
 <header>
-  <h1>San Francisco Crime Analysis</h1>
-  <p>A data-driven exploration of crime patterns across districts, time, and categories</p>
+  <p class="header-eyebrow">Social Data Analysis &amp; Visualization · 2026</p>
+  <h1>San Francisco<br><em>Crime Patterns</em></h1>
+  <p class="subtitle">
+    A data-driven exploration of crime across districts, time-of-day,
+    and incident category — combining static summaries with interactive maps.
+  </p>
+  <div class="header-rule"></div>
 </header>
 
+<!-- ── NAV ──────────────────────────────────────────── -->
 <nav>
   <a href="#overview">Overview</a>
   <a href="#static">Static Insights</a>
-  <a href="#dynamic">Interactive Analysis</a>
+  <a href="#dynamic">Interactive</a>
+  <a href="#conclusion">Takeaways</a>
 </nav>
 
 <main>
 
-  <!-- OVERVIEW -->
+  <!-- ── OVERVIEW ─────────────────────────────────── -->
   <section id="overview">
-    <h2>📊 Project Overview</h2>
-    <p>
-      This project explores crime data from San Francisco, focusing on patterns across 
-      districts, time, and crime categories. By combining static visual summaries with 
-      interactive plots, we aim to uncover meaningful trends and behavioral patterns.
-    </p>
+    <span class="section-label">Project Overview</span>
+    <h2 class="section-title">What we set out to find</h2>
+    <hr class="section-divider">
+
+    <div class="overview-body">
+      <div class="overview-text">
+        <p>
+          San Francisco's publicly available incident reports give a rare window
+          into where, when, and how crime clusters across the city. This project
+          combines probability analysis, temporal heatmaps, and district-level
+          mapping to surface patterns that are difficult to see in raw tables.
+        </p>
+        <p style="margin-top:1rem;">
+          Three static charts establish the city-wide picture; four interactive
+          visualisations then let you drill into specific days, hours, and
+          neighbourhoods at your own pace.
+        </p>
+      </div>
+
+      <div class="overview-stats">
+        <div class="stat-block">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Visualisations</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Crime categories</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">10</div>
+          <div class="stat-label">SF Districts</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number">24h</div>
+          <div class="stat-label">Temporal span</div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- STATIC VISUALS -->
+  <!-- ── STATIC ────────────────────────────────────── -->
   <section id="static">
-    <h2>📌 Static Insights</h2>
-
-    <div class="card">
-      <h3>Top 10 Crime Categories</h3>
-      <p>
-        This chart highlights the most frequent crime categories, giving a quick overview 
-        of dominant crime types in the city.
-      </p>
-      <img src="images/top10_categories.png" alt="Top 10 Crime Categories">
-    </div>
-
-    <div class="card">
-      <h3>Total Crime Count by District</h3>
-      <p>
-        Crime is not evenly distributed. This visualization shows which districts experience 
-        higher overall crime activity.
-      </p>
-      <img src="images/crime_count_by_district.png" alt="Crime by District">
-    </div>
-
-    <div class="card">
-      <h3>Relative Crime Probability</h3>
-      <p>
-        This heatmap compares the probability of specific crimes within each district relative 
-        to overall crime rates, revealing district-specific crime patterns.
-      </p>
-      <img src="images/crime_by_distict_heatmap.png" alt="Probability Heatmap">
-    </div>
-  </section>
-
-  <!-- DYNAMIC VISUALS -->
-  <section id="dynamic">
-    <h2>⚡ Interactive Analysis</h2>
-
-    <div class="card">
-      <h3>Saturday Drug Activity</h3>
-      <p>
-        This heatmap reveals how drug-related incidents fluctuate throughout a Saturday.
-      </p>
-      <iframe src="visualizations/saturday_drug_activity.html"></iframe>
-    </div>
-
-    <div class="card">
-      <h3>Weekly Assault Activity</h3>
-      <p>
-        Assault patterns across midweek to weekend (Wednesday–Sunday) show how behavior 
-        changes over time.
-      </p>
-      <iframe src="visualizations/assault_weekly_heatmap.html"></iframe>
-    </div>
-
-    <div class="card">
-      <h3>Assault Likelihood by District</h3>
-      <p>
-        This map highlights which districts have higher likelihoods of assault incidents.
-      </p>
-      <iframe src="visualizations/assault_likelihood_by_district.html"></iframe>
-    </div>
-
-    <div class="card">
-      <h3>Hourly Crime Distribution</h3>
-      <p>
-        Explore how crime types vary across the day. Toggle categories to compare patterns.
-      </p>
-      <iframe src="visualizations/normalized_hourly_distribution.html"></iframe>
-    </div>
-
-  </section>
-
-  <!-- CONCLUSION -->
-  <section id="conclusion">
-    <h2>🧠 Key Takeaways</h2>
-    <p>
-      Crime patterns in San Francisco are shaped by both geography and time. Certain districts 
-      exhibit strong associations with specific crime types, while temporal trends reveal peaks 
-      during weekends and late hours. Interactive visualizations allow deeper exploration of 
-      these dynamics.
+    <span class="section-label">Static Insights</span>
+    <h2 class="section-title">The city-wide picture</h2>
+    <p class="section-desc">
+      Three charts that frame the overall landscape before you dive into
+      the interactive layers.
     </p>
+    <hr class="section-divider">
+
+    <div class="static-list">
+
+      <!-- Visual 1 -->
+      <div class="static-item">
+        <div class="static-meta">
+          <span class="card-number-inline">01</span>
+          <div>
+            <span class="card-tag static">Static · Bar chart</span>
+            <h3>Top 10 Crime Categories</h3>
+            <p>
+              Which crime types dominate the incident reports? This ranked bar chart
+              gives a quick city-wide inventory of the ten most frequently recorded
+              categories.
+            </p>
+          </div>
+        </div>
+        <img class="static-img"
+             src="images/top10_categories.png"
+             alt="Top 10 Crime Categories bar chart">
+      </div>
+
+      <!-- Visual 2 -->
+      <div class="static-item">
+        <div class="static-meta">
+          <span class="card-number-inline">02</span>
+          <div>
+            <span class="card-tag static">Static · Bar chart</span>
+            <h3>Total Crime Count by District</h3>
+            <p>
+              Crime is far from evenly spread. This chart surfaces which districts
+              carry the heaviest load of reported incidents — a first hint at where
+              deeper analysis is warranted.
+            </p>
+          </div>
+        </div>
+        <img class="static-img"
+             src="images/crime_count_by_district.png"
+             alt="Total crime count by district bar chart">
+      </div>
+
+      <!-- Visual 3 -->
+      <div class="static-item">
+        <div class="static-meta">
+          <span class="card-number-inline">03</span>
+          <div>
+            <span class="card-tag static">Static · Heatmap</span>
+            <h3>Relative Crime Probability</h3>
+            <p>
+              P(Crime | District) / P(Crime) — each cell shows how much more (or less)
+              likely a crime type is within a district compared to the city baseline.
+              Reveals strong district-specific signatures.
+            </p>
+          </div>
+        </div>
+        <img class="static-img"
+             src="images/crime_by_distict_heatmap.png"
+             alt="Probability heatmap of crime types by district">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── DYNAMIC ───────────────────────────────────── -->
+  <section id="dynamic">
+    <span class="section-label">Interactive Analysis</span>
+    <h2 class="section-title">Explore the data yourself</h2>
+    <p class="section-desc">
+      Hover, click, filter, and zoom. These four visualisations are fully
+      interactive — each one rewards a bit of poking around.
+    </p>
+    <hr class="section-divider">
+
+    <div class="card-grid">
+
+      <!-- Card 4 -->
+      <div class="card">
+        <span class="card-number">04</span>
+        <span class="card-tag dynamic">Interactive · Heatmap</span>
+        <h3>Saturday Drug Activity</h3>
+        <p>
+          Hour-by-hour, district-by-district: where do drug-related incidents
+          spike across a Saturday? The heatmap makes the late-night concentration
+          immediately visible.
+        </p>
+        <a class="card-link" href="visualizations/saturday_drug_activity.html" target="_blank">Open interactive</a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="card">
+        <span class="card-number">05</span>
+        <span class="card-tag dynamic">Interactive · Heatmap</span>
+        <h3>Weekly Assault Activity</h3>
+        <p>
+          Assault patterns shift as the week progresses toward the weekend.
+          This heatmap covers Wednesday through Sunday, revealing how social
+          rhythms shape incident timing.
+        </p>
+        <a class="card-link" href="visualizations/assault_weekly_heatmap.html" target="_blank">Open interactive</a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="card">
+        <span class="card-number">06</span>
+        <span class="card-tag dynamic">Interactive · Map</span>
+        <h3>Assault Likelihood by District</h3>
+        <p>
+          A choropleth map of relative assault likelihood across SF's police
+          districts. Hover over each zone to see the exact probability figure.
+        </p>
+        <a class="card-link" href="visualizations/assault_likelihood_by_district.html" target="_blank">Open interactive</a>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="card">
+        <span class="card-number">07</span>
+        <span class="card-tag dynamic">Interactive · Bar chart</span>
+        <h3>Hourly Crime Distribution</h3>
+        <p>
+          How does each crime type rise and fall across 24 hours? Toggle categories
+          on and off to isolate the rhythms you care about most — built with
+          Plotly for fluid interaction.
+        </p>
+        <a class="card-link" href="visualizations/normalized_hourly_distribution.html" target="_blank">Open interactive</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONCLUSION ────────────────────────────────── -->
+  <section id="conclusion">
+    <span class="section-label">Key Takeaways</span>
+    <h2 class="section-title">What the data tells us</h2>
+    <hr class="section-divider">
+
+    <div class="conclusion-body">
+      <p>
+        Crime in San Francisco is deeply shaped by geography and time. Certain
+        districts carry disproportionate shares of specific incident types, while
+        temporal analysis shows clear peaks tied to weekend nights and late hours.
+        Probability-normalised views reveal patterns invisible in raw counts — and
+        interactive exploration turns those patterns into something you can actually
+        feel in the data.
+      </p>
+    </div>
   </section>
 
 </main>
 
+<!-- ── FOOTER ────────────────────────────────────────── -->
 <footer>
-  <p>Created for Social Data Analysis & Visualization Course</p>
+  <p>Created for Social Data Analysis &amp; Visualization · SF Incident Reports Dataset</p>
 </footer>
 
 </body>
